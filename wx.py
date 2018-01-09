@@ -9,7 +9,7 @@ import time
 机器人Start
 '''
 # 初始化机器人，扫码登陆
-bot = Bot(console_qr=True, cache_path=True)
+bot = Bot(cache_path=True, console_qr=True)
 
 # 搜索
 name = '你的hero'
@@ -53,6 +53,7 @@ def screenshot():
     print('准备发送截图...')
     myFriend.send('准备发送截图...')
     myFriend.send_image('img/autojump.png')
+    myFriend('执行完成')
     print('发送截图完成...')
 
 
@@ -86,6 +87,7 @@ def open():
     # 解屏
     # inputInfo(82)
     onClick(init_x, init_y)
+    myFriend('执行完成')
 
 
 def login():
@@ -112,6 +114,7 @@ def login():
     inputInfo(4)
     # 点击登录
     onClick(530, 1090)
+    myFriend('执行完成')
 
 
 def workspace():
@@ -119,7 +122,6 @@ def workspace():
     进入工作区
     :return:
     '''
-    print('bbbb')
     onClick(538, 1714)
     time.sleep(sleep)
     # 翻页
@@ -127,6 +129,7 @@ def workspace():
     time.sleep(sleep)
     # 进入打卡界面
     onClick(670, 800)
+    myFriend('执行完成')
 
 
 def check():
@@ -143,6 +146,7 @@ def check():
     # 锁屏
     inputInfo(26)
     myFriend.send('【系统消息】打卡成功!')
+    myFriend('执行完成')
 
 
 def control(code):
@@ -157,6 +161,13 @@ def control(code):
         workspace()
     elif code == '打卡':
         check()
+    elif code == '图片':
+        myFriend.send('准备发送截图...')
+        myFriend.send_image('img/autojump.png')
+    elif code == '进程':
+        onClick(780, 1870)
+        onClick(544, 1690)
+        myFriend.send('已关机进程')
     else:
         inputInfo(code)
 
