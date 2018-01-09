@@ -1,2 +1,2 @@
 # check_dingding
-Automatic punch card........
+Automatic punch card
