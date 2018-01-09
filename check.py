@@ -3,10 +3,6 @@
 import os
 import time
 
-mobile, pwd = ('18589245630', '123456')
-
-numberKey = {'1': 8, '2': 9, '3': 10, '4': 11, '5': 12, '6': 13, '7': 14, '8': 15, '9': 16, '0': 7}
-
 init_x, init_y = 760, 1687
 
 # 延迟
@@ -31,6 +27,15 @@ def inputInfo(info):
     os.system('/usr/local/bin/adb shell input keyevent %s' % info)
 
 
+def inputText(txt):
+    '''
+    输入字符串
+    :param txt:
+    :return:
+    '''
+    os.system('/usr/local/bin/adb shell input text %s' % txt)
+
+
 def open():
     '''
     打开应用
@@ -53,8 +58,7 @@ def login():
     # 点击清空账号
     onClick(955, 682)
     # 输入账号
-    for i in list(mobile):
-        inputInfo(numberKey[i])
+    inputText('18589245630')
 
     # 跳到输入密码
     inputInfo(61)
@@ -62,8 +66,7 @@ def login():
     onClick(955, 908)
 
     # 输入密码
-    for i in list(pwd):
-        inputInfo(numberKey[i])
+    inputText('123456')
 
     # 关闭键盘
     inputInfo(4)
