@@ -53,7 +53,6 @@ def screenshot():
     print('准备发送截图...')
     myFriend.send('准备发送截图...')
     myFriend.send_image('img/autojump.png')
-    myFriend('执行完成')
     print('发送截图完成...')
 
 
@@ -87,7 +86,6 @@ def open():
     # 解屏
     # inputInfo(82)
     onClick(init_x, init_y)
-    myFriend('执行完成')
 
 
 def login():
@@ -114,7 +112,6 @@ def login():
     inputInfo(4)
     # 点击登录
     onClick(530, 1090)
-    myFriend('执行完成')
 
 
 def workspace():
@@ -129,7 +126,6 @@ def workspace():
     time.sleep(sleep)
     # 进入打卡界面
     onClick(670, 800)
-    myFriend('执行完成')
 
 
 def check():
@@ -146,7 +142,6 @@ def check():
     # 锁屏
     inputInfo(26)
     myFriend.send('【系统消息】打卡成功!')
-    myFriend('执行完成')
 
 
 def control(code):
